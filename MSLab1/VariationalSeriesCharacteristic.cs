@@ -16,6 +16,9 @@ namespace MSLab1
             _countFiles = countFiles;
         }
 
+        public VariationalSeriesCharacteristic(IList<double> fileContent)
+        {
+        }
         // среднее арифметическое
         public StatPoint GetAvarage()
         {
@@ -26,7 +29,7 @@ namespace MSLab1
         }
 
 
-        public StatPoint GetMediane()
+        public virtual StatPoint GetMediane()
         {
             return new StatPoint()
             {
@@ -35,7 +38,7 @@ namespace MSLab1
         }
 
         //среднее квадратическое
-        public StatPoint GetSquareAvarage()
+        public virtual StatPoint GetSquareAvarage()
         {
             double sumSquareItems = 0;
             for (int i = 0; i < _fileContent.Count; i++)
@@ -90,7 +93,7 @@ namespace MSLab1
 
         //отклонения
         //смещенное
-        private double GetBaisedDeviation()
+        protected virtual double GetBaisedDeviation()
         {
             double value = 0;
             for (int i = 0; i < _fileContent.Count; i++)
@@ -101,7 +104,7 @@ namespace MSLab1
         }
 
         //несмещенное
-        private double GetUnBaisedDeviation()
+        protected virtual double GetUnBaisedDeviation()
         {
             double rubbish = _countFiles / Convert.ToDouble(_countFiles - 1);
             return Convert.ToDouble(Math.Sqrt(rubbish * GetCoreExample(2)));
@@ -109,29 +112,29 @@ namespace MSLab1
 
         //коэффициент ассиметрии
         //смещенный
-        private double GetBaisedAssemetry()
+        protected virtual double GetBaisedAssemetry()
         {
             return GetCoreExample(3) / Math.Pow(GetBaisedDeviation(), 3);
         }
 
         //несмещенное
-        private double GetUnBaisedAssemetry()
+        protected virtual double GetUnBaisedAssemetry()
         {
             double rubbish = (Math.Sqrt(_countFiles * (_countFiles - 1)) / (_countFiles - 2));
-            return rubbish * GetBaisedAssemetry();
+             return rubbish * GetBaisedAssemetry();
         }
         //эксцесс
         //смещенный
-        private double GetBaisedKurtosis()
+        protected virtual double GetBaisedKurtosis()
         {
             return GetCoreExample(4) / Convert.ToDouble(Math.Pow(GetBaisedDeviation(), 4));
         }
         //несмещенный
-        private double GetUnBaisedKurtosis()
+        protected virtual double GetUnBaisedKurtosis()
         {
-            var count = _countFiles;
-            double rubbish = (count * count - 1) / Convert.ToDouble(((count - 2) * (count - 3)));
-            return rubbish * ((GetBaisedKurtosis() - 3) + (6 / count + 1));
+             var count = _countFiles;
+             double rubbish = (count * count - 1) / Convert.ToDouble(((count - 2) * (count - 3)));
+             return rubbish * ((GetBaisedKurtosis() - 3) + (6 / count + 1));
         }
         // контрэксцесс
         private double GetContrCurtosis()
@@ -144,7 +147,7 @@ namespace MSLab1
             return GetUnBaisedDeviation() / GetAvarageArif();
         }
         // сума произведения разницы квадратов на вероятность
-        private double GetCoreExample(int pow)
+        protected virtual double GetCoreExample(int pow)
         {
             double value = 0;
             for (int i = 0; i < _fileContent.Count; i++)
@@ -154,7 +157,7 @@ namespace MSLab1
             return value;
         }
 
-        private double GetAvarageArif()
+        protected virtual double GetAvarageArif()
         {
             double value = 0;
             for (int i = 0; i < _fileContent.Count; i++)

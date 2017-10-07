@@ -45,12 +45,12 @@ namespace MSLab1
                     listFileContent.Add(Convert.ToDouble(str[i]));
                 }
             }
-            _numberService = new NumberService(listFileContent);
-            _classService = new ClassService();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            _numberService = new NumberService(listFileContent);
+            _classService = new ClassService();
             dataGridView1.DataSource = _numberService.GetAllListNumber();
             var variationalSeries = _numberService.GetAllListNumber();
             listClasses = _classService.GetListClasses(variationalSeries, 0);
@@ -76,6 +76,8 @@ namespace MSLab1
             {
                 chart3.Series["Классы"].Points.AddXY(listClasses[i].StartLimit, listClasses[i].DistribValue);
             }
+
+            //Варицационный ряд
             _variationalSeriesCharacteristic = new VariationalSeriesCharacteristic(_numberService.GetAllListNumber(), _numberService.GetFileCount());
             _formService.FillTextBox(textBox1, _variationalSeriesCharacteristic.GetAvarage().Meaning);
             _formService.FillTextBox(textBox2, _variationalSeriesCharacteristic.GetMediane().Meaning);
@@ -86,6 +88,18 @@ namespace MSLab1
             _formService.FillTextBox(textBox7, _variationalSeriesCharacteristic.GetConrtKurt().Meaning);
             _formService.FillTextBox(textBox8, _variationalSeriesCharacteristic.GetCoefVariation().Meaning);
 
+            // Выборка
+            PrepareData();
+
+            var _sampleCharacteristic = new SampleCharacteristics(listFileContent);
+            _formService.FillTextBox(textBox9, _sampleCharacteristic.GetAvarage().Meaning);
+            _formService.FillTextBox(textBox10, _sampleCharacteristic.GetMediane().Meaning);
+            _formService.FillTextBox(textBox11, _sampleCharacteristic.GetSquareAvarage().Meaning);
+            _formService.FillTextBox(textBox12, _sampleCharacteristic.GetUnbaisedAssemetry().Meaning);
+            _formService.FillTextBox(textBox13, _sampleCharacteristic.GetUnbaisedDeviation().Meaning);
+            _formService.FillTextBox(textBox14, _sampleCharacteristic.GetKurt().Meaning);
+            _formService.FillTextBox(textBox15, _sampleCharacteristic.GetConrtKurt().Meaning);
+            _formService.FillTextBox(textBox16, _sampleCharacteristic.GetCoefVariation().Meaning);
         }
 
         private void button1_Click(object sender, EventArgs e)

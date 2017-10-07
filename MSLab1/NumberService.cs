@@ -21,9 +21,9 @@ namespace MSLab1
 
             // dictionary that store variant and count of each in the text file
             Dictionary<double, int> dictionary = new Dictionary<double, int>();
-
-            _list.Sort();
-            foreach (var a in _list)
+            var list = _list;
+            list.Sort();
+            foreach (var a in list)
             {
                 if (!dictionary.Keys.Contains(a))
                 {
@@ -42,7 +42,7 @@ namespace MSLab1
                 double distrib = 0;
                 for (int j = 0; j < i; j++)
                 {
-                    distrib += dictionary.ElementAt(j).Value / Convert.ToDouble(_list.Count());
+                    distrib += dictionary.ElementAt(j).Value / Convert.ToDouble(list.Count());
                 }
                 listStatData.Add(
                     new Number()
@@ -50,7 +50,7 @@ namespace MSLab1
                         Id = i + 1,
                         VariantValue = dictionary.ElementAt(i).Key,
                         AbsoluteFrequency = dictionary.ElementAt(i).Value,
-                        RelatedFrequency = dictionary.ElementAt(i).Value / Convert.ToDouble(_list.Count()),
+                        RelatedFrequency = dictionary.ElementAt(i).Value / Convert.ToDouble(list.Count()),
                         DistributionValue = distrib
                     }
                 );
