@@ -37,7 +37,7 @@ namespace MSLab1
                     
                 }
             }
-            for (int i = 0; i < _list.Count(); i++)
+            for (int i = 0; i < dictionary.Count(); i++)
             {
                 double distrib = 0;
                 for (int j = 0; j < i; j++)
@@ -57,6 +57,11 @@ namespace MSLab1
             }
 
             return listStatData;            
+        }
+
+        public int GetFileCount()
+        {
+            return _list.Count;
         }
     }
 }

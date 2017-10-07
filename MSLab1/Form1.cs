@@ -12,7 +12,7 @@ namespace MSLab1
 {
     public partial class Form1 : Form
     {
-        private SampleCharacteristic _sampleCharacteristic;
+        private VariationalSeriesCharacteristic _variationalSeriesCharacteristic;
         private IFileService _fileService;
         private FormService _formService;
         private NumberService _numberService;
@@ -76,15 +76,15 @@ namespace MSLab1
             {
                 chart3.Series["Классы"].Points.AddXY(listClasses[i].StartLimit, listClasses[i].DistribValue);
             }
-            _sampleCharacteristic = new SampleCharacteristic(_numberService.GetAllListNumber());
-            _formService.FillTextBox(textBox1, _sampleCharacteristic.GetAvarage().Meaning);
-            _formService.FillTextBox(textBox2, _sampleCharacteristic.GetMediane().Meaning);
-            _formService.FillTextBox(textBox3, _sampleCharacteristic.GetSquareAvarage().Meaning);
-            _formService.FillTextBox(textBox4, _sampleCharacteristic.GetUnbaisedAssemetry().Meaning);
-            _formService.FillTextBox(textBox5, _sampleCharacteristic.GetUnbaisedDeviation().Meaning);
-            _formService.FillTextBox(textBox6, _sampleCharacteristic.GetKurt().Meaning);
-            _formService.FillTextBox(textBox7, _sampleCharacteristic.GetConrtKurt().Meaning);
-            _formService.FillTextBox(textBox8, _sampleCharacteristic.GetCoefVariation().Meaning);
+            _variationalSeriesCharacteristic = new VariationalSeriesCharacteristic(_numberService.GetAllListNumber(), _numberService.GetFileCount());
+            _formService.FillTextBox(textBox1, _variationalSeriesCharacteristic.GetAvarage().Meaning);
+            _formService.FillTextBox(textBox2, _variationalSeriesCharacteristic.GetMediane().Meaning);
+            _formService.FillTextBox(textBox3, _variationalSeriesCharacteristic.GetSquareAvarage().Meaning);
+            _formService.FillTextBox(textBox4, _variationalSeriesCharacteristic.GetUnbaisedAssemetry().Meaning);
+            _formService.FillTextBox(textBox5, _variationalSeriesCharacteristic.GetUnbaisedDeviation().Meaning);
+            _formService.FillTextBox(textBox6, _variationalSeriesCharacteristic.GetKurt().Meaning);
+            _formService.FillTextBox(textBox7, _variationalSeriesCharacteristic.GetConrtKurt().Meaning);
+            _formService.FillTextBox(textBox8, _variationalSeriesCharacteristic.GetCoefVariation().Meaning);
 
         }
 
@@ -92,11 +92,6 @@ namespace MSLab1
         {
             listClasses = _classService.GetListClasses(_numberService.GetAllListNumber(), Convert.ToInt32(txtStepsCount.Text));
             Calculation();
-        }
-
-        private void tabPage5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace MSLab1
 {
-    public class SampleCharacteristic
+    public class VariationalSeriesCharacteristic
     {
         private IList<Number> _fileContent;
-        public SampleCharacteristic(IList<Number> fileContent)
+        int _countFiles;
+        public VariationalSeriesCharacteristic(IList<Number> fileContent, int countFiles)
         {
             _fileContent = fileContent;
+            _countFiles = countFiles;
         }
 
         // среднее арифметическое
@@ -93,16 +95,16 @@ namespace MSLab1
             double value = 0;
             for (int i = 0; i < _fileContent.Count; i++)
             {
-                value += ((Math.Pow(_fileContent[i].VariantValue, 2) * _fileContent[i].RelatedFrequency) - Math.Pow(GetAvarageArif(), 2));
+                value += (Math.Pow(_fileContent[i].VariantValue - GetAvarageArif(), 2) * _fileContent[i].RelatedFrequency);
             }
-            return Math.Sqrt(Math.Abs(value));
+            return Convert.ToDouble(Math.Sqrt(value));
         }
 
         //несмещенное
         private double GetUnBaisedDeviation()
         {
-            double rubbish = _fileContent.Count / Convert.ToDouble(_fileContent.Count - 1);
-            return Math.Sqrt(rubbish * GetCoreExample(2));
+            double rubbish = _countFiles / Convert.ToDouble(_countFiles - 1);
+            return Convert.ToDouble(Math.Sqrt(rubbish * GetCoreExample(2)));
         }
 
         //коэффициент ассиметрии
@@ -115,20 +117,20 @@ namespace MSLab1
         //несмещенное
         private double GetUnBaisedAssemetry()
         {
-            double rubbish = (Math.Sqrt(_fileContent.Count * (_fileContent.Count - 1)) / (_fileContent.Count - 2));
+            double rubbish = (Math.Sqrt(_countFiles * (_countFiles - 1)) / (_countFiles - 2));
             return rubbish * GetBaisedAssemetry();
         }
         //эксцесс
         //смещенный
         private double GetBaisedKurtosis()
         {
-            return GetCoreExample(4) / Math.Pow(GetBaisedDeviation(), 4);
+            return GetCoreExample(4) / Convert.ToDouble(Math.Pow(GetBaisedDeviation(), 4));
         }
         //несмещенный
         private double GetUnBaisedKurtosis()
         {
-            var count = _fileContent.Count;
-            double rubbish = (count * count - 1) / ((count - 2) * (count - 3));
+            var count = _countFiles;
+            double rubbish = (count * count - 1) / Convert.ToDouble(((count - 2) * (count - 3)));
             return rubbish * ((GetBaisedKurtosis() - 3) + (6 / count + 1));
         }
         // контрэксцесс
