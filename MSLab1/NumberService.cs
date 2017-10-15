@@ -40,7 +40,7 @@ namespace MSLab1
             for (int i = 0; i < dictionary.Count(); i++)
             {
                 double distrib = 0;
-                for (int j = 0; j < i; j++)
+                for (int j = 0; j < i+1; j++)
                 {
                     distrib += dictionary.ElementAt(j).Value / Convert.ToDouble(list.Count());
                 }

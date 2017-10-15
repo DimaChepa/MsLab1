@@ -19,7 +19,7 @@ namespace MSLab1
         private ClassService _classService;
         private List<double> listFileContent;
         private List<Class> listClasses;
-        private readonly string filePath = @"C:\Users\USER\Downloads\Mat_Stat2\VP&MC\labs_своя программа\data_lab1,2\25\exp.txt";
+        private string filePath = @"C:\Users\USER\Downloads\Mat_Stat2\VP&MC\labs_своя программа\data_lab1,2\25\exp.txt";
         public Form1(IFileService fileService, FormService formService)
         {
             InitializeComponent();
@@ -48,6 +48,11 @@ namespace MSLab1
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            DataBuild();
+        }
+
+        private void DataBuild()
         {
             _numberService = new NumberService(listFileContent);
             _classService = new ClassService();
@@ -87,7 +92,7 @@ namespace MSLab1
             _formService.FillTextBox(textBox6, _variationalSeriesCharacteristic.GetKurt().Meaning);
             _formService.FillTextBox(textBox7, _variationalSeriesCharacteristic.GetConrtKurt().Meaning);
             _formService.FillTextBox(textBox8, _variationalSeriesCharacteristic.GetCoefVariation().Meaning);
-
+            textBox17.Text = $"{_variationalSeriesCharacteristic.GetStartConfidenceInterval().Meaning}...{_variationalSeriesCharacteristic.GetEndConfidenceInterval().Meaning}";
             // Выборка
             PrepareData();
 
@@ -106,6 +111,16 @@ namespace MSLab1
         {
             listClasses = _classService.GetListClasses(_numberService.GetAllListNumber(), Convert.ToInt32(txtStepsCount.Text));
             Calculation();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filePath = openFileDialog1.FileName;
+                PrepareData();
+                DataBuild();
+            }
         }
     }
 }

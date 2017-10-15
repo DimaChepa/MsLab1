@@ -10,6 +10,7 @@ namespace MSLab1
     {
         private IList<Number> _fileContent;
         int _countFiles;
+        double laplasCoefFunction = 2.06;
         public VariationalSeriesCharacteristic(IList<Number> fileContent, int countFiles)
         {
             _fileContent = fileContent;
@@ -91,6 +92,31 @@ namespace MSLab1
             };
         }
 
+        public StatPoint GetStartConfidenceInterval()
+        {
+            return new StatPoint()
+            {
+                Meaning = GetStartConfidence()
+            };
+        }
+
+        public StatPoint GetEndConfidenceInterval()
+        {
+            return new StatPoint()
+            {
+                Meaning = GetEndConfidence()
+            };
+        }
+
+        protected virtual double GetStartConfidence()
+        {
+            return GetAvarageArif() - laplasCoefFunction * (GetBaisedDeviation() / Convert.ToDouble(Math.Sqrt(_countFiles)));
+        }
+
+        protected virtual double GetEndConfidence()
+        {
+            return GetAvarageArif() + laplasCoefFunction * (GetBaisedDeviation() / Convert.ToDouble(Math.Sqrt(_countFiles)));
+        }
         //отклонения
         //смещенное
         protected virtual double GetBaisedDeviation()

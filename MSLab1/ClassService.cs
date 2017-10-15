@@ -28,12 +28,12 @@ namespace MSLab1
                         list1.Add(listNumbers[i].VariantValue);
                     }
                 }
+                listCountVariationOnStep.Add(list1.Count);
                 double distrib = 0;
-                for (int i = 0; i < j; i++)
+                for (int i = 0; i < j + 1; i++)
                 {
                     distrib += listCountVariationOnStep[i] / Convert.ToDouble(listNumbers.Count);
                 }
-                listCountVariationOnStep.Add(list1.Count);
                 list.Add(new Class()
                 {
                     Id = j + 1,
