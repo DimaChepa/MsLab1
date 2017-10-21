@@ -47,18 +47,13 @@ namespace MSLab1
 
         protected override double GetBaisedDeviation()
         {
-            double value = 0;
-            for (int i = 0; i < _list.Count; i++)
-            {
-                value += _list[i] * _list[i] - GetAvarageArif() * GetAvarageArif();
-            }
-            return Math.Sqrt((1 / Convert.ToDouble(_list.Count)) * value);
+            var value = 1 / Convert.ToDouble(_list.Count);
+            return Math.Sqrt(value * GetCoreExample(2));
         }
 
         protected override double GetUnBaisedDeviation()
         {
-            var value = 1 / Convert.ToDouble(_list.Count - 1);
-            return Math.Sqrt(value * GetCoreExample(2));
+            return Math.Sqrt(GetCoreExample(2) / Convert.ToDouble(_list.Count - 1));
         }
 
         protected override double GetBaisedAssemetry()
@@ -83,15 +78,17 @@ namespace MSLab1
             double high = Math.Pow(count, 2) - 1;
             double low = (count - 2) * (count - 3);
             double rubbish = high / low;
-            return rubbish * ((GetBaisedKurtosis() - 3) + (6 / count + 1));
+            double baisedKurt = GetBaisedKurtosis();
+            return rubbish * ((baisedKurt - 3) + (6 / (double)(count + 1)));
         }
 
         protected override double GetCoreExample(int pow)
         {
             double value = 0;
+            double avarageArif = GetAvarageArif();
             for (int i = 0; i < _list.Count; i++)
             {
-                value += Math.Pow((_list[i] - GetAvarageArif()), pow);
+                value += Math.Pow((_list[i] - avarageArif), pow);
             }
             return value;
         }

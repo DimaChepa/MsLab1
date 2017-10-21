@@ -1,38 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MSLab1
 {
     public class ClassService
     {
-        public List<Class> GetListClasses(List<Number> listNumbers, int countSteps)
+        public List<Class> GetListClasses(List<double> listNumbers, int countSteps)
         {
+            // countItems = кол-во элементов в ввыборке
+            listNumbers.Sort();
             List<Class> list = new List<Class>();
             if (countSteps == 0)
             {
-                countSteps = Convert.ToInt32(1 + 3.32 * Math.Log(listNumbers.Count));
+
+                if (listNumbers.Count >= 100)
+                {
+                    countSteps = Convert.ToInt32(Math.Pow(listNumbers.Count, (1.0 / 3.0)));
+                }
+                else
+                {
+                    countSteps = Convert.ToInt32(Math.Sqrt(listNumbers.Count));
+                }
             }
             double stepLength = (FindMaxInList(listNumbers) - FindMinInList(listNumbers)) / Convert.ToDouble(countSteps);
-            var min = listNumbers[0].VariantValue;
-            var listCountVariationOnStep = new List<double>();
+            var min = listNumbers[0];
+            var listCountVariationOnStep = new List<int>();
             for (int j = 0; j < countSteps; j++)
             {
                 var list1 = new List<double>();
                 for (int i = 0; i < listNumbers.Count; i++)
                 {
-                    if (listNumbers[i].VariantValue >= min + stepLength * j && listNumbers[i].VariantValue <= min + stepLength * (j + 1))
+                    if (listNumbers[i] >= min + stepLength * j && listNumbers[i] <= min + stepLength * (j + 1))
                     {
-                        list1.Add(listNumbers[i].VariantValue);
+                        list1.Add(listNumbers[i]);
                     }
                 }
                 listCountVariationOnStep.Add(list1.Count);
                 double distrib = 0;
                 for (int i = 0; i < j + 1; i++)
                 {
-                    distrib += listCountVariationOnStep[i] / Convert.ToDouble(listNumbers.Count);
+                    distrib += listCountVariationOnStep[i] / (double)listNumbers.Count;
                 }
                 list.Add(new Class()
                 {
@@ -49,15 +57,15 @@ namespace MSLab1
             return list;
         }
 
-        private double FindMaxInList(List<Number> listNumbers)
+        private double FindMaxInList(List<double> listNumbers)
 
         {
-            return listNumbers.Last().VariantValue;
+            return listNumbers.Last();
         }
 
-        private double FindMinInList(List<Number> listNumbers)
+        private double FindMinInList(List<double> listNumbers)
         {
-            return listNumbers.First().VariantValue;
+            return listNumbers.First();
         }
     }
 }

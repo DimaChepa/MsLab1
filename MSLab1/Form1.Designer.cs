@@ -51,35 +51,25 @@
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtVariation = new System.Windows.Forms.TextBox();
+            this.txtContrKurt = new System.Windows.Forms.TextBox();
+            this.txtkurtosis = new System.Windows.Forms.TextBox();
+            this.txtAssym = new System.Windows.Forms.TextBox();
+            this.txtAverSquare = new System.Windows.Forms.TextBox();
+            this.txtMediane = new System.Windows.Forms.TextBox();
+            this.txtAverArif = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtDeviation = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -247,28 +237,18 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.textBox17);
-            this.tabPage5.Controls.Add(this.label11);
-            this.tabPage5.Controls.Add(this.textBox16);
-            this.tabPage5.Controls.Add(this.textBox15);
-            this.tabPage5.Controls.Add(this.textBox14);
-            this.tabPage5.Controls.Add(this.textBox13);
-            this.tabPage5.Controls.Add(this.textBox12);
-            this.tabPage5.Controls.Add(this.textBox11);
-            this.tabPage5.Controls.Add(this.textBox10);
-            this.tabPage5.Controls.Add(this.textBox9);
+            this.tabPage5.Controls.Add(this.txtVariation);
+            this.tabPage5.Controls.Add(this.txtContrKurt);
+            this.tabPage5.Controls.Add(this.txtkurtosis);
+            this.tabPage5.Controls.Add(this.txtDeviation);
+            this.tabPage5.Controls.Add(this.txtAssym);
+            this.tabPage5.Controls.Add(this.txtAverSquare);
+            this.tabPage5.Controls.Add(this.txtMediane);
+            this.tabPage5.Controls.Add(this.txtAverArif);
             this.tabPage5.Controls.Add(this.label10);
             this.tabPage5.Controls.Add(this.label9);
-            this.tabPage5.Controls.Add(this.textBox8);
             this.tabPage5.Controls.Add(this.label8);
-            this.tabPage5.Controls.Add(this.textBox7);
             this.tabPage5.Controls.Add(this.label7);
-            this.tabPage5.Controls.Add(this.textBox6);
-            this.tabPage5.Controls.Add(this.textBox5);
-            this.tabPage5.Controls.Add(this.textBox4);
-            this.tabPage5.Controls.Add(this.textBox3);
-            this.tabPage5.Controls.Add(this.textBox2);
-            this.tabPage5.Controls.Add(this.textBox1);
             this.tabPage5.Controls.Add(this.label6);
             this.tabPage5.Controls.Add(this.label5);
             this.tabPage5.Controls.Add(this.label4);
@@ -282,66 +262,60 @@
             this.tabPage5.Text = "Характеристики";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // textBox16
+            // txtVariation
             // 
-            this.textBox16.Location = new System.Drawing.Point(491, 493);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 20);
-            this.textBox16.TabIndex = 25;
+            this.txtVariation.Location = new System.Drawing.Point(263, 442);
+            this.txtVariation.Name = "txtVariation";
+            this.txtVariation.Size = new System.Drawing.Size(100, 20);
+            this.txtVariation.TabIndex = 25;
             // 
-            // textBox15
+            // txtContrKurt
             // 
-            this.textBox15.Location = new System.Drawing.Point(491, 442);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 24;
+            this.txtContrKurt.Location = new System.Drawing.Point(263, 387);
+            this.txtContrKurt.Name = "txtContrKurt";
+            this.txtContrKurt.Size = new System.Drawing.Size(100, 20);
+            this.txtContrKurt.TabIndex = 24;
             // 
-            // textBox14
+            // txtkurtosis
             // 
-            this.textBox14.Location = new System.Drawing.Point(491, 390);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 23;
+            this.txtkurtosis.Location = new System.Drawing.Point(263, 326);
+            this.txtkurtosis.Name = "txtkurtosis";
+            this.txtkurtosis.Size = new System.Drawing.Size(100, 20);
+            this.txtkurtosis.TabIndex = 23;
+            this.txtkurtosis.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
-            // textBox13
+            // txtAssym
             // 
-            this.textBox13.Location = new System.Drawing.Point(491, 276);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 22;
+            this.txtAssym.Location = new System.Drawing.Point(263, 231);
+            this.txtAssym.Name = "txtAssym";
+            this.txtAssym.Size = new System.Drawing.Size(100, 20);
+            this.txtAssym.TabIndex = 21;
             // 
-            // textBox12
+            // txtAverSquare
             // 
-            this.textBox12.Location = new System.Drawing.Point(491, 231);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 21;
+            this.txtAverSquare.Location = new System.Drawing.Point(263, 181);
+            this.txtAverSquare.Name = "txtAverSquare";
+            this.txtAverSquare.Size = new System.Drawing.Size(100, 20);
+            this.txtAverSquare.TabIndex = 20;
             // 
-            // textBox11
+            // txtMediane
             // 
-            this.textBox11.Location = new System.Drawing.Point(491, 181);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 20;
+            this.txtMediane.Location = new System.Drawing.Point(263, 127);
+            this.txtMediane.Name = "txtMediane";
+            this.txtMediane.Size = new System.Drawing.Size(100, 20);
+            this.txtMediane.TabIndex = 19;
             // 
-            // textBox10
+            // txtAverArif
             // 
-            this.textBox10.Location = new System.Drawing.Point(491, 127);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 19;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(491, 77);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 18;
+            this.txtAverArif.Location = new System.Drawing.Point(263, 78);
+            this.txtAverArif.Name = "txtAverArif";
+            this.txtAverArif.Size = new System.Drawing.Size(100, 20);
+            this.txtAverArif.TabIndex = 18;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(488, 25);
+            this.label10.Location = new System.Drawing.Point(260, 25);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 13);
             this.label10.TabIndex = 17;
@@ -350,103 +324,38 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(264, 25);
+            this.label9.Location = new System.Drawing.Point(445, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 13);
+            this.label9.Size = new System.Drawing.Size(68, 13);
             this.label9.TabIndex = 16;
-            this.label9.Text = "Вариационный ряд";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(267, 493);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 15;
+            this.label9.Text = "Отклонение";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(61, 493);
+            this.label8.Location = new System.Drawing.Point(60, 442);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(128, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "Коэффициент вариации";
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(267, 442);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 13;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(60, 442);
+            this.label7.Location = new System.Drawing.Point(60, 387);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Контр эксцесс";
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(267, 390);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(267, 276);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 10;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(267, 234);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(267, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(267, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(267, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(61, 390);
+            this.label6.Location = new System.Drawing.Point(63, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "эксцесс";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 276);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Отклонение";
             // 
             // label4
             // 
@@ -488,21 +397,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label11
+            // txtDeviation
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(63, 338);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(139, 13);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Доверительный интервал";
+            this.txtDeviation.Location = new System.Drawing.Point(263, 276);
+            this.txtDeviation.Name = "txtDeviation";
+            this.txtDeviation.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviation.TabIndex = 22;
             // 
-            // textBox17
+            // label5
             // 
-            this.textBox17.Location = new System.Drawing.Point(267, 338);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(324, 20);
-            this.textBox17.TabIndex = 27;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(63, 276);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Отклонение";
             // 
             // Form1
             // 
@@ -542,39 +451,29 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtStepsCount;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtVariation;
+        private System.Windows.Forms.TextBox txtContrKurt;
+        private System.Windows.Forms.TextBox txtkurtosis;
+        private System.Windows.Forms.TextBox txtAssym;
+        private System.Windows.Forms.TextBox txtAverSquare;
+        private System.Windows.Forms.TextBox txtMediane;
+        private System.Windows.Forms.TextBox txtAverArif;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtDeviation;
+        private System.Windows.Forms.Label label5;
     }
 }
 
