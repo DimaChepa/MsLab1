@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnomalValues.cs" />
     <Compile Include="Class.cs" />
     <Compile Include="ClassService.cs" />
     <Compile Include="FileService.cs" />

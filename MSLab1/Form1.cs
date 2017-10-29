@@ -19,7 +19,7 @@ namespace MSLab1
         private ClassService _classService;
         private List<double> listFileContent;
         private List<Class> listClasses;
-        private string filePath = @"C:\Users\USER\Downloads\Mat_Stat2\VP&MC\labs_своя программа\data_lab1,2\25\exp.txt";
+        private string filePath = @"C:\Users\USER\Downloads\Mat_Stat2\VP&MC\labs_своя программа\data_lab1,2\500\exp.txt";
         public Form1(IFileService fileService, FormService formService)
         {
             InitializeComponent();
@@ -114,6 +114,18 @@ namespace MSLab1
             _formService.FillTextBox(txtContrKurtosisHighLimit, _sampleCharacteristic.GetHighLimit(_sampleCharacteristic.GetConrtKurt().Meaning, _sampleCharacteristic.GetDeviationForContrKurtosis()));
             _formService.FillTextBox(txtVariationLowLimit, _sampleCharacteristic.GetLowLimit(_sampleCharacteristic.GetCoefVariation().Meaning, _sampleCharacteristic.GetDeviationForVariation()));
             _formService.FillTextBox(txtVariationHighLimit, _sampleCharacteristic.GetHighLimit(_sampleCharacteristic.GetCoefVariation().Meaning, _sampleCharacteristic.GetDeviationForVariation()));
+
+            var anomalValues = new AnomalValues(listFileContent);
+            _formService.FillTextBox(txtAnomalLow, anomalValues.FindLowLimit());
+            _formService.FillTextBox(txtAnomalHigh, anomalValues.FindHighLimit());
+
+            for (int i = 0; i < anomalValues.FindAnomal().Count(); i++)
+            {
+
+                DataGridViewTextBoxCell normalColumn = new DataGridViewTextBoxCell();
+                normalColumn.Value = anomalValues.FindAnomal().ElementAt(i);
+                dataGridView3.Rows.Insert(i, normalColumn.Value);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
