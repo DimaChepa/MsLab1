@@ -9,6 +9,8 @@ namespace MSLab1
     public class SampleCharacteristics: VariationalSeriesCharacteristic
     {
         private IList<double> _list;
+        //t1-a/2,v
+        private double laplasCoef = 2.06;
         public SampleCharacteristics(IList<double> list):base(list)
         {
             _list = list;
@@ -33,6 +35,53 @@ namespace MSLab1
             {
                 Meaning = Math.Sqrt(sumSquareItems / _list.Count)
             };
+        }
+        public double GetDeviationForAvarage()
+        {
+            return GetUnBaisedDeviation() / (double)Math.Sqrt(_list.Count);
+        }
+
+        public double GetDeviationForDeviation()
+        {
+            return GetUnBaisedDeviation() / (double)Math.Sqrt(2 * _list.Count);
+        }
+
+        public double GetDeviationForVariation()
+        {
+            var value = GetCoefVariation().Meaning;
+            return value * Math.Sqrt((1 + 2 * value * value) / (double)(2 * _list.Count));
+        }
+
+        public double GetDeviationForAssemetry()
+        {
+            var firstPart = 6 / (double)_list.Count;
+            var secondPart = 1 - 12 / (double)(2 * _list.Count + 7);
+            return Math.Sqrt(firstPart * secondPart);
+        }
+
+        public double GetDeviationForKurtosis()
+        {
+            var firstPart = 24 / (double)_list.Count;
+            var secondPart = 1 - (225 / (double)(15 * _list.Count + 124));
+            return Math.Sqrt(firstPart * secondPart);
+        }
+
+        public double GetDeviationForContrKurtosis()
+        {
+            var kurtosis = GetBaisedKurtosis();
+            var firstPart = Math.Sqrt(kurtosis / ((double)29 * _list.Count));
+            var secondPart = Math.Pow(Math.Pow(Math.Abs(kurtosis * kurtosis - 1), 3), 0.25);
+            return firstPart * secondPart;
+        }
+
+        public double GetLowLimit(double parameter, double mark)
+        {
+            return parameter - mark * laplasCoef;
+        }
+
+        public double GetHighLimit(double parameter, double mark)
+        {
+            return parameter + mark * laplasCoef;
         }
 
         protected override double GetAvarageArif()

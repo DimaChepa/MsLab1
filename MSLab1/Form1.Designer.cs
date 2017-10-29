@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,12 +48,17 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtDeviationForContrKurtosis = new System.Windows.Forms.TextBox();
+            this.txtDeviationForKurtosis = new System.Windows.Forms.TextBox();
+            this.txtDeviationForDeviation = new System.Windows.Forms.TextBox();
+            this.txtDeviationForAssymerty = new System.Windows.Forms.TextBox();
+            this.txtAvarageDeviation = new System.Windows.Forms.TextBox();
             this.txtVariation = new System.Windows.Forms.TextBox();
             this.txtContrKurt = new System.Windows.Forms.TextBox();
             this.txtkurtosis = new System.Windows.Forms.TextBox();
+            this.txtDeviation = new System.Windows.Forms.TextBox();
             this.txtAssym = new System.Windows.Forms.TextBox();
             this.txtAverSquare = new System.Windows.Forms.TextBox();
             this.txtMediane = new System.Windows.Forms.TextBox();
@@ -63,13 +68,27 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.txtDeviation = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtDeviationForVariation = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtAvarageLowLimit = new System.Windows.Forms.TextBox();
+            this.txtContrKurtosisHighLimit = new System.Windows.Forms.TextBox();
+            this.txtKurtosisHighLimit = new System.Windows.Forms.TextBox();
+            this.txtKurtosisLowLimit = new System.Windows.Forms.TextBox();
+            this.txtContrKurtosisLowLimit = new System.Windows.Forms.TextBox();
+            this.txtVariationLowLimit = new System.Windows.Forms.TextBox();
+            this.txtAssymetryHighLimit = new System.Windows.Forms.TextBox();
+            this.txtAssymetryLowLimit = new System.Windows.Forms.TextBox();
+            this.txtAvarageHighLimit = new System.Windows.Forms.TextBox();
+            this.txtVariationHighLimit = new System.Windows.Forms.TextBox();
+            this.txtDeviationHighLimit = new System.Windows.Forms.TextBox();
+            this.txtDeviationLowLimit = new System.Windows.Forms.TextBox();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,9 +97,9 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -176,16 +195,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(99, 33);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Частота";
-            this.chart1.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Частота";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(530, 459);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -201,42 +220,46 @@
             this.tabPage4.Text = "Графики";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // chart3
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart3.Legends.Add(legend2);
-            this.chart3.Location = new System.Drawing.Point(436, 63);
-            this.chart3.Name = "chart3";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Классы";
-            this.chart3.Series.Add(series2);
-            this.chart3.Size = new System.Drawing.Size(371, 400);
-            this.chart3.TabIndex = 1;
-            this.chart3.Text = "chart3";
-            // 
             // chart2
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart2.Legends.Add(legend3);
+            chartArea5.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart2.Legends.Add(legend5);
             this.chart2.Location = new System.Drawing.Point(19, 37);
             this.chart2.Name = "chart2";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "Ряд";
-            this.chart2.Series.Add(series3);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.MarkerColor = System.Drawing.Color.Red;
+            series5.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series5.Name = "Ряд";
+            this.chart2.Series.Add(series5);
             this.chart2.Size = new System.Drawing.Size(385, 426);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "Ряд";
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.txtDeviationLowLimit);
+            this.tabPage5.Controls.Add(this.txtDeviationHighLimit);
+            this.tabPage5.Controls.Add(this.txtVariationHighLimit);
+            this.tabPage5.Controls.Add(this.txtAvarageHighLimit);
+            this.tabPage5.Controls.Add(this.txtAssymetryLowLimit);
+            this.tabPage5.Controls.Add(this.txtAssymetryHighLimit);
+            this.tabPage5.Controls.Add(this.txtVariationLowLimit);
+            this.tabPage5.Controls.Add(this.txtContrKurtosisLowLimit);
+            this.tabPage5.Controls.Add(this.txtKurtosisLowLimit);
+            this.tabPage5.Controls.Add(this.txtKurtosisHighLimit);
+            this.tabPage5.Controls.Add(this.txtContrKurtosisHighLimit);
+            this.tabPage5.Controls.Add(this.txtAvarageLowLimit);
+            this.tabPage5.Controls.Add(this.label11);
+            this.tabPage5.Controls.Add(this.txtDeviationForVariation);
+            this.tabPage5.Controls.Add(this.txtDeviationForContrKurtosis);
+            this.tabPage5.Controls.Add(this.txtDeviationForKurtosis);
+            this.tabPage5.Controls.Add(this.txtDeviationForDeviation);
+            this.tabPage5.Controls.Add(this.txtDeviationForAssymerty);
+            this.tabPage5.Controls.Add(this.txtAvarageDeviation);
             this.tabPage5.Controls.Add(this.txtVariation);
             this.tabPage5.Controls.Add(this.txtContrKurt);
             this.tabPage5.Controls.Add(this.txtkurtosis);
@@ -262,6 +285,41 @@
             this.tabPage5.Text = "Характеристики";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // txtDeviationForContrKurtosis
+            // 
+            this.txtDeviationForContrKurtosis.Location = new System.Drawing.Point(405, 387);
+            this.txtDeviationForContrKurtosis.Name = "txtDeviationForContrKurtosis";
+            this.txtDeviationForContrKurtosis.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviationForContrKurtosis.TabIndex = 30;
+            // 
+            // txtDeviationForKurtosis
+            // 
+            this.txtDeviationForKurtosis.Location = new System.Drawing.Point(405, 326);
+            this.txtDeviationForKurtosis.Name = "txtDeviationForKurtosis";
+            this.txtDeviationForKurtosis.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviationForKurtosis.TabIndex = 29;
+            // 
+            // txtDeviationForDeviation
+            // 
+            this.txtDeviationForDeviation.Location = new System.Drawing.Point(405, 276);
+            this.txtDeviationForDeviation.Name = "txtDeviationForDeviation";
+            this.txtDeviationForDeviation.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviationForDeviation.TabIndex = 28;
+            // 
+            // txtDeviationForAssymerty
+            // 
+            this.txtDeviationForAssymerty.Location = new System.Drawing.Point(405, 234);
+            this.txtDeviationForAssymerty.Name = "txtDeviationForAssymerty";
+            this.txtDeviationForAssymerty.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviationForAssymerty.TabIndex = 27;
+            // 
+            // txtAvarageDeviation
+            // 
+            this.txtAvarageDeviation.Location = new System.Drawing.Point(405, 78);
+            this.txtAvarageDeviation.Name = "txtAvarageDeviation";
+            this.txtAvarageDeviation.Size = new System.Drawing.Size(100, 20);
+            this.txtAvarageDeviation.TabIndex = 26;
+            // 
             // txtVariation
             // 
             this.txtVariation.Location = new System.Drawing.Point(263, 442);
@@ -282,7 +340,13 @@
             this.txtkurtosis.Name = "txtkurtosis";
             this.txtkurtosis.Size = new System.Drawing.Size(100, 20);
             this.txtkurtosis.TabIndex = 23;
-            this.txtkurtosis.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            // 
+            // txtDeviation
+            // 
+            this.txtDeviation.Location = new System.Drawing.Point(263, 276);
+            this.txtDeviation.Name = "txtDeviation";
+            this.txtDeviation.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviation.TabIndex = 22;
             // 
             // txtAssym
             // 
@@ -324,7 +388,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(445, 25);
+            this.label9.Location = new System.Drawing.Point(402, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 13);
             this.label9.TabIndex = 16;
@@ -356,6 +420,15 @@
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "эксцесс";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(63, 276);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Отклонение";
             // 
             // label4
             // 
@@ -397,21 +470,124 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // txtDeviation
+            // txtDeviationForVariation
             // 
-            this.txtDeviation.Location = new System.Drawing.Point(263, 276);
-            this.txtDeviation.Name = "txtDeviation";
-            this.txtDeviation.Size = new System.Drawing.Size(100, 20);
-            this.txtDeviation.TabIndex = 22;
+            this.txtDeviationForVariation.Location = new System.Drawing.Point(405, 442);
+            this.txtDeviationForVariation.Name = "txtDeviationForVariation";
+            this.txtDeviationForVariation.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviationForVariation.TabIndex = 31;
             // 
-            // label5
+            // label11
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 276);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Отклонение";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(614, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(139, 13);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Доверительный интервал";
+            // 
+            // txtAvarageLowLimit
+            // 
+            this.txtAvarageLowLimit.Location = new System.Drawing.Point(594, 78);
+            this.txtAvarageLowLimit.Name = "txtAvarageLowLimit";
+            this.txtAvarageLowLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtAvarageLowLimit.TabIndex = 33;
+            // 
+            // txtContrKurtosisHighLimit
+            // 
+            this.txtContrKurtosisHighLimit.Location = new System.Drawing.Point(719, 387);
+            this.txtContrKurtosisHighLimit.Name = "txtContrKurtosisHighLimit";
+            this.txtContrKurtosisHighLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtContrKurtosisHighLimit.TabIndex = 34;
+            // 
+            // txtKurtosisHighLimit
+            // 
+            this.txtKurtosisHighLimit.Location = new System.Drawing.Point(719, 326);
+            this.txtKurtosisHighLimit.Name = "txtKurtosisHighLimit";
+            this.txtKurtosisHighLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtKurtosisHighLimit.TabIndex = 35;
+            // 
+            // txtKurtosisLowLimit
+            // 
+            this.txtKurtosisLowLimit.Location = new System.Drawing.Point(594, 326);
+            this.txtKurtosisLowLimit.Name = "txtKurtosisLowLimit";
+            this.txtKurtosisLowLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtKurtosisLowLimit.TabIndex = 36;
+            // 
+            // txtContrKurtosisLowLimit
+            // 
+            this.txtContrKurtosisLowLimit.Location = new System.Drawing.Point(594, 387);
+            this.txtContrKurtosisLowLimit.Name = "txtContrKurtosisLowLimit";
+            this.txtContrKurtosisLowLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtContrKurtosisLowLimit.TabIndex = 37;
+            // 
+            // txtVariationLowLimit
+            // 
+            this.txtVariationLowLimit.Location = new System.Drawing.Point(594, 442);
+            this.txtVariationLowLimit.Name = "txtVariationLowLimit";
+            this.txtVariationLowLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtVariationLowLimit.TabIndex = 38;
+            // 
+            // txtAssymetryHighLimit
+            // 
+            this.txtAssymetryHighLimit.Location = new System.Drawing.Point(719, 234);
+            this.txtAssymetryHighLimit.Name = "txtAssymetryHighLimit";
+            this.txtAssymetryHighLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtAssymetryHighLimit.TabIndex = 39;
+            // 
+            // txtAssymetryLowLimit
+            // 
+            this.txtAssymetryLowLimit.Location = new System.Drawing.Point(594, 234);
+            this.txtAssymetryLowLimit.Name = "txtAssymetryLowLimit";
+            this.txtAssymetryLowLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtAssymetryLowLimit.TabIndex = 40;
+            // 
+            // txtAvarageHighLimit
+            // 
+            this.txtAvarageHighLimit.Location = new System.Drawing.Point(719, 78);
+            this.txtAvarageHighLimit.Name = "txtAvarageHighLimit";
+            this.txtAvarageHighLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtAvarageHighLimit.TabIndex = 41;
+            // 
+            // txtVariationHighLimit
+            // 
+            this.txtVariationHighLimit.Location = new System.Drawing.Point(719, 442);
+            this.txtVariationHighLimit.Name = "txtVariationHighLimit";
+            this.txtVariationHighLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtVariationHighLimit.TabIndex = 42;
+            // 
+            // txtDeviationHighLimit
+            // 
+            this.txtDeviationHighLimit.Location = new System.Drawing.Point(719, 276);
+            this.txtDeviationHighLimit.Name = "txtDeviationHighLimit";
+            this.txtDeviationHighLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviationHighLimit.TabIndex = 43;
+            // 
+            // txtDeviationLowLimit
+            // 
+            this.txtDeviationLowLimit.Location = new System.Drawing.Point(594, 276);
+            this.txtDeviationLowLimit.Name = "txtDeviationLowLimit";
+            this.txtDeviationLowLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviationLowLimit.TabIndex = 44;
+            // 
+            // chart3
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart3.Legends.Add(legend6);
+            this.chart3.Location = new System.Drawing.Point(410, 37);
+            this.chart3.Name = "chart3";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.MarkerColor = System.Drawing.Color.Red;
+            series6.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series6.Name = "Классы";
+            this.chart3.Series.Add(series6);
+            this.chart3.Size = new System.Drawing.Size(385, 426);
+            this.chart3.TabIndex = 1;
+            this.chart3.Text = "Ряд";
             // 
             // Form1
             // 
@@ -431,10 +607,10 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,7 +624,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Label label6;
@@ -474,6 +649,26 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtDeviation;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtAvarageDeviation;
+        private System.Windows.Forms.TextBox txtDeviationForContrKurtosis;
+        private System.Windows.Forms.TextBox txtDeviationForKurtosis;
+        private System.Windows.Forms.TextBox txtDeviationForDeviation;
+        private System.Windows.Forms.TextBox txtDeviationForAssymerty;
+        private System.Windows.Forms.TextBox txtDeviationForVariation;
+        private System.Windows.Forms.TextBox txtDeviationLowLimit;
+        private System.Windows.Forms.TextBox txtDeviationHighLimit;
+        private System.Windows.Forms.TextBox txtVariationHighLimit;
+        private System.Windows.Forms.TextBox txtAvarageHighLimit;
+        private System.Windows.Forms.TextBox txtAssymetryLowLimit;
+        private System.Windows.Forms.TextBox txtAssymetryHighLimit;
+        private System.Windows.Forms.TextBox txtVariationLowLimit;
+        private System.Windows.Forms.TextBox txtContrKurtosisLowLimit;
+        private System.Windows.Forms.TextBox txtKurtosisLowLimit;
+        private System.Windows.Forms.TextBox txtKurtosisHighLimit;
+        private System.Windows.Forms.TextBox txtContrKurtosisHighLimit;
+        private System.Windows.Forms.TextBox txtAvarageLowLimit;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
     }
 }
 

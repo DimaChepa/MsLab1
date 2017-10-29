@@ -73,11 +73,11 @@ namespace MSLab1
                 chart1.Series["Частота"].Points.AddXY($"{listClasses[i].StartLimit} ... {listClasses[i].EndLimit}", listClasses[i].Frequence);
             }
             _formService.ChartClear(chart2);
-            _formService.ChartClear(chart3);
             for (int i = 0; i < listNumber.Count; i++)
             {
                 chart2.Series["Ряд"].Points.AddXY(listNumber[i].VariantValue, listNumber[i].DistributionValue);
             }
+            _formService.ChartClear(chart3);
             for (int i = 0; i < listClasses.Count; i++)
             {
                 chart3.Series["Классы"].Points.AddXY(listClasses[i].StartLimit, listClasses[i].DistribValue);
@@ -94,6 +94,26 @@ namespace MSLab1
             _formService.FillTextBox(txtkurtosis, _sampleCharacteristic.GetKurt().Meaning);
             _formService.FillTextBox(txtContrKurt, _sampleCharacteristic.GetConrtKurt().Meaning);
             _formService.FillTextBox(txtVariation, _sampleCharacteristic.GetCoefVariation().Meaning);
+            _formService.FillTextBox(txtDeviationForAssymerty, _sampleCharacteristic.GetDeviationForAssemetry());
+            _formService.FillTextBox(txtDeviationForContrKurtosis, _sampleCharacteristic.GetDeviationForContrKurtosis());
+            _formService.FillTextBox(txtDeviationForDeviation, _sampleCharacteristic.GetDeviationForDeviation());
+            _formService.FillTextBox(txtAvarageDeviation, _sampleCharacteristic.GetDeviationForAvarage());
+            _formService.FillTextBox(txtDeviationForKurtosis, _sampleCharacteristic.GetDeviationForKurtosis());
+            _formService.FillTextBox(txtDeviationForVariation, _sampleCharacteristic.GetDeviationForVariation());
+
+            // confident interval
+            _formService.FillTextBox(txtAvarageLowLimit, _sampleCharacteristic.GetLowLimit(_sampleCharacteristic.GetAvarage().Meaning, _sampleCharacteristic.GetDeviationForAvarage()));
+            _formService.FillTextBox(txtAvarageHighLimit, _sampleCharacteristic.GetHighLimit(_sampleCharacteristic.GetAvarage().Meaning, _sampleCharacteristic.GetDeviationForAvarage()));
+            _formService.FillTextBox(txtAssymetryLowLimit, _sampleCharacteristic.GetLowLimit(_sampleCharacteristic.GetUnbaisedAssemetry().Meaning, _sampleCharacteristic.GetDeviationForAssemetry()));
+            _formService.FillTextBox(txtAssymetryHighLimit, _sampleCharacteristic.GetHighLimit(_sampleCharacteristic.GetUnbaisedAssemetry().Meaning, _sampleCharacteristic.GetDeviationForAssemetry()));
+            _formService.FillTextBox(txtDeviationLowLimit, _sampleCharacteristic.GetLowLimit(_sampleCharacteristic.GetUnbaisedDeviation().Meaning, _sampleCharacteristic.GetDeviationForDeviation()));
+            _formService.FillTextBox(txtDeviationHighLimit, _sampleCharacteristic.GetHighLimit(_sampleCharacteristic.GetUnbaisedDeviation().Meaning, _sampleCharacteristic.GetDeviationForDeviation()));
+            _formService.FillTextBox(txtKurtosisLowLimit, _sampleCharacteristic.GetLowLimit(_sampleCharacteristic.GetKurt().Meaning, _sampleCharacteristic.GetDeviationForKurtosis()));
+            _formService.FillTextBox(txtKurtosisHighLimit, _sampleCharacteristic.GetHighLimit(_sampleCharacteristic.GetKurt().Meaning, _sampleCharacteristic.GetDeviationForKurtosis()));
+            _formService.FillTextBox(txtContrKurtosisLowLimit, _sampleCharacteristic.GetLowLimit(_sampleCharacteristic.GetConrtKurt().Meaning, _sampleCharacteristic.GetDeviationForContrKurtosis()));
+            _formService.FillTextBox(txtContrKurtosisHighLimit, _sampleCharacteristic.GetHighLimit(_sampleCharacteristic.GetConrtKurt().Meaning, _sampleCharacteristic.GetDeviationForContrKurtosis()));
+            _formService.FillTextBox(txtVariationLowLimit, _sampleCharacteristic.GetLowLimit(_sampleCharacteristic.GetCoefVariation().Meaning, _sampleCharacteristic.GetDeviationForVariation()));
+            _formService.FillTextBox(txtVariationHighLimit, _sampleCharacteristic.GetHighLimit(_sampleCharacteristic.GetCoefVariation().Meaning, _sampleCharacteristic.GetDeviationForVariation()));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -110,11 +130,6 @@ namespace MSLab1
                 PrepareData();
                 DataBuild();
             }
-        }
-
-        private void textBox14_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
