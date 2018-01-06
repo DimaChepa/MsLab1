@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MSLab1
 {
@@ -19,7 +20,7 @@ namespace MSLab1
         private ClassService _classService;
         private List<double> listFileContent;
         private List<Class> listClasses;
-        private string filePath = @"C:\Users\USER\Downloads\Mat_Stat2\VP&MC\labs_своя программа\data_lab1,2\500\exp.txt";
+        private string filePath = @"C:\Users\USER\Downloads\Mat_Stat2\VP&MC\labs_своя программа\data_lab1,2\25\exp.txt";
         public Form1(IFileService fileService, FormService formService)
         {
             InitializeComponent();
@@ -67,20 +68,52 @@ namespace MSLab1
             List<Number> listNumber = _numberService.GetAllListNumber();
             dataGridView1.DataSource = listNumber;
             dataGridView2.DataSource = listClasses;
-            _formService.ChartClear(chart1);
+            _formService.ChartClear(chart1);            
             for (int i = 0; i < listClasses.Count; i++)
             {
                 chart1.Series["Частота"].Points.AddXY($"{listClasses[i].StartLimit} ... {listClasses[i].EndLimit}", listClasses[i].Frequence);
             }
             _formService.ChartClear(chart2);
+            chart2.Series.Clear();
             for (int i = 0; i < listNumber.Count; i++)
             {
-                chart2.Series["Ряд"].Points.AddXY(listNumber[i].VariantValue, listNumber[i].DistributionValue);
+                chart2.Series.Add($"ser{i}").ChartType = SeriesChartType.Line;
+                chart2.Series[i].Color = Color.Chocolate;
+                chart2.Series[i].BorderWidth = 5;
+                chart2.Series[i].Points.AddXY(listNumber[i].VariantValue, listNumber[i].DistributionValue);
+                if (i < listNumber.Count - 1)
+                {
+                    chart2.Series[i].Points.AddXY(listNumber[i + 1].VariantValue, listNumber[i].DistributionValue);
+                    chart2.Series[i].IsVisibleInLegend = false;
+                }
+                else
+                {
+                    chart2.ChartAreas[0].AxisX.Maximum = listNumber[i].VariantValue + 3;
+                    chart2.Series[i].Points.AddXY(listNumber[i].VariantValue + 3, listNumber[i].DistributionValue);
+                    chart2.Series[i].LegendText = "Ряд";
+                    chart2.Series[i].IsVisibleInLegend = true;
+                }
             }
             _formService.ChartClear(chart3);
+            chart3.Series.Clear();
             for (int i = 0; i < listClasses.Count; i++)
             {
-                chart3.Series["Классы"].Points.AddXY(listClasses[i].StartLimit, listClasses[i].DistribValue);
+                chart3.Series.Add($"ser{i}").ChartType = SeriesChartType.Line;
+                chart3.Series[i].Color = Color.Chocolate;
+                chart3.Series[i].BorderWidth = 5;
+                chart3.Series[i].Points.AddXY(listClasses[i].StartLimit, listClasses[i].DistribValue);
+                if (i < listClasses.Count - 1)
+                {
+                    chart3.Series[i].Points.AddXY(listClasses[i + 1].StartLimit, listClasses[i].DistribValue);
+                    chart3.Series[i].IsVisibleInLegend = false;
+                }
+                else
+                {
+                    chart3.ChartAreas[0].AxisX.Maximum = listClasses[i].StartLimit + 3;
+                    chart3.Series[i].Points.AddXY(listClasses[i].StartLimit+3, listClasses[i].DistribValue);
+                    chart3.Series[i].LegendText = "Класс";
+                    chart3.Series[i].IsVisibleInLegend = true;
+                }
             }
             // Выборка
             PrepareData();

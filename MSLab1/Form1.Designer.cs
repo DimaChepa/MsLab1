@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -88,12 +86,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.txtAnomalLow = new System.Windows.Forms.TextBox();
-            this.txtAnomalHigh = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtAnomalHigh = new System.Windows.Forms.TextBox();
+            this.txtAnomalLow = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -203,16 +201,17 @@
             // 
             // chart1
             // 
-            chartArea13.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea13);
-            legend13.Name = "Legend1";
-            this.chart1.Legends.Add(legend13);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(99, 33);
             this.chart1.Name = "chart1";
-            series13.ChartArea = "ChartArea1";
-            series13.Legend = "Legend1";
-            series13.Name = "Частота";
-            this.chart1.Series.Add(series13);
+            series1.ChartArea = "ChartArea1";
+            series1.CustomProperties = "PointWidth=1";
+            series1.Legend = "Legend1";
+            series1.Name = "Частота";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(530, 459);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -230,38 +229,24 @@
             // 
             // chart3
             // 
-            chartArea14.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.chart3.Legends.Add(legend14);
+            chartArea2.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart3.Legends.Add(legend2);
             this.chart3.Location = new System.Drawing.Point(410, 37);
             this.chart3.Name = "chart3";
-            series14.ChartArea = "ChartArea1";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series14.Legend = "Legend1";
-            series14.MarkerColor = System.Drawing.Color.Red;
-            series14.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series14.Name = "Классы";
-            this.chart3.Series.Add(series14);
             this.chart3.Size = new System.Drawing.Size(385, 426);
             this.chart3.TabIndex = 1;
             this.chart3.Text = "Ряд";
             // 
             // chart2
             // 
-            chartArea15.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea15);
-            legend15.Name = "Legend1";
-            this.chart2.Legends.Add(legend15);
+            chartArea3.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart2.Legends.Add(legend3);
             this.chart2.Location = new System.Drawing.Point(19, 37);
             this.chart2.Name = "chart2";
-            series15.ChartArea = "ChartArea1";
-            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series15.Legend = "Legend1";
-            series15.MarkerColor = System.Drawing.Color.Red;
-            series15.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series15.Name = "Ряд";
-            this.chart2.Series.Add(series15);
             this.chart2.Size = new System.Drawing.Size(385, 426);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "Ряд";
@@ -593,10 +578,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Среднее арифметическое";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.dataGridView3);
@@ -608,20 +589,6 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Аномальные значения";
             this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // txtAnomalLow
-            // 
-            this.txtAnomalLow.Location = new System.Drawing.Point(82, 59);
-            this.txtAnomalLow.Name = "txtAnomalLow";
-            this.txtAnomalLow.Size = new System.Drawing.Size(100, 20);
-            this.txtAnomalLow.TabIndex = 0;
-            // 
-            // txtAnomalHigh
-            // 
-            this.txtAnomalHigh.Location = new System.Drawing.Point(503, 58);
-            this.txtAnomalHigh.Name = "txtAnomalHigh";
-            this.txtAnomalHigh.Size = new System.Drawing.Size(100, 20);
-            this.txtAnomalHigh.TabIndex = 1;
             // 
             // dataGridView3
             // 
@@ -637,6 +604,24 @@
             // 
             this.Value.HeaderText = "Value";
             this.Value.Name = "Value";
+            // 
+            // txtAnomalHigh
+            // 
+            this.txtAnomalHigh.Location = new System.Drawing.Point(503, 58);
+            this.txtAnomalHigh.Name = "txtAnomalHigh";
+            this.txtAnomalHigh.Size = new System.Drawing.Size(100, 20);
+            this.txtAnomalHigh.TabIndex = 1;
+            // 
+            // txtAnomalLow
+            // 
+            this.txtAnomalLow.Location = new System.Drawing.Point(82, 59);
+            this.txtAnomalLow.Name = "txtAnomalLow";
+            this.txtAnomalLow.Size = new System.Drawing.Size(100, 20);
+            this.txtAnomalLow.TabIndex = 0;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
