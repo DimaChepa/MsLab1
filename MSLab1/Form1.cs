@@ -20,7 +20,7 @@ namespace MSLab1
         private ClassService _classService;
         private List<double> listFileContent;
         private List<Class> listClasses;
-        private string filePath = @"C:\Users\USER\Downloads\Mat_Stat2\VP&MC\labs_своя программа\data_lab1,2\25\exp.txt";
+        private string filePath = @"C:\Users\USER\Downloads\Mat_Stat2\VP&MC\labs_своя программа\data_lab1,2\70\veib1.txt";
         public Form1(IFileService fileService, FormService formService)
         {
             InitializeComponent();
@@ -68,10 +68,15 @@ namespace MSLab1
             List<Number> listNumber = _numberService.GetAllListNumber();
             dataGridView1.DataSource = listNumber;
             dataGridView2.DataSource = listClasses;
-            _formService.ChartClear(chart1);            
+            _formService.ChartClear(chart1);
+            chart1.Series.Clear();
+            chart1.Series.Add("Частота");
+            chart1.Series["Частота"].ChartType = SeriesChartType.Column;
+            chart1.Series["Частота"].BorderWidth = 1;
+            chart1.Series["Частота"].CustomProperties = "PointWidth=1";
             for (int i = 0; i < listClasses.Count; i++)
             {
-                chart1.Series["Частота"].Points.AddXY($"{listClasses[i].StartLimit} ... {listClasses[i].EndLimit}", listClasses[i].Frequence);
+                chart1.Series["Частота"].Points.AddXY(listClasses[i].StartLimit, listClasses[i].Frequence);
             }
             _formService.ChartClear(chart2);
             chart2.Series.Clear();
@@ -110,7 +115,7 @@ namespace MSLab1
                 else
                 {
                     chart3.ChartAreas[0].AxisX.Maximum = listClasses[i].StartLimit + 3;
-                    chart3.Series[i].Points.AddXY(listClasses[i].StartLimit+3, listClasses[i].DistribValue);
+                    chart3.Series[i].Points.AddXY(listClasses[i].StartLimit + 3, listClasses[i].DistribValue);
                     chart3.Series[i].LegendText = "Класс";
                     chart3.Series[i].IsVisibleInLegend = true;
                 }
@@ -158,6 +163,22 @@ namespace MSLab1
                 DataGridViewTextBoxCell normalColumn = new DataGridViewTextBoxCell();
                 normalColumn.Value = anomalValues.FindAnomal().ElementAt(i);
                 dataGridView3.Rows.Insert(i, normalColumn.Value);
+            }
+            _formService.ChartClear(netChart);
+            var listReleasDistribution = _numberService.GetProbabilityNet();
+            // net chart
+           
+            chart1.Series.Add("Density").ChartType = SeriesChartType.Point;
+            chart1.Series["Density"].Color = Color.Chocolate;
+            chart1.Series["Density"].BorderWidth = 1;
+            var listPointsDensity = _classService.GetDensity(listClasses, _numberService.FindSigma(), _numberService.GetFileCount());
+            for (int i = 0; i < listPointsDensity.Count; i++)
+            {
+                chart1.Series["Density"].Points.AddXY(listClasses[i].StartLimit, listPointsDensity[i]);
+            }
+            for (int i = 0; i < listNumber.Count; i++)
+            {
+                netChart.Series["Series1"].Points.AddXY(Math.Log(listNumber[i].VariantValue), listReleasDistribution.ElementAt(i));
             }
         }
 

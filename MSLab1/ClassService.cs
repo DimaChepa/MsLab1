@@ -57,6 +57,18 @@ namespace MSLab1
             return list;
         }
 
+        public List<double> GetDensity(List<Class> listClasses, double sigma, int fileCount)
+        {
+            var listDensities = new List<double>();
+            for (int i = 0; i < listClasses.Count; i++)
+            {
+                var value1 = Math.Pow(Math.E, -Math.Pow(listClasses[i].StartLimit, 2) / (2 * sigma * sigma));
+                var value = value1 * (listClasses[i].StartLimit) / (sigma * sigma);
+                listDensities.Add(value * fileCount * (listClasses[i].EndLimit - listClasses[i].StartLimit));
+            }
+            return listDensities;
+        }
+
         private double FindMaxInList(List<double> listNumbers)
 
         {

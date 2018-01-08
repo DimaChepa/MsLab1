@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathNet.Numerics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,6 +63,31 @@ namespace MSLab1
         public int GetFileCount()
         {
             return _list.Count;
+        }
+
+        public IEnumerable<double> GetProbabilityNet()
+        {
+            var listDistb = new List<double>();
+            var list = GetAllListNumber();
+            for (int i = 0; i < list.Count; i++)
+            {
+                var res = Math.Log(-Math.Log(1 - list[i].DistributionValue));
+                listDistb.Add(res);
+            }
+            return listDistb;
+        }
+
+        public double FindSigma()
+        {
+            var list = this.GetAllListNumber();
+            double sum = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                sum += Math.Pow(list[i].VariantValue, 2);
+            }
+            var newCoef = Math.Sqrt(sum /( (double)2 * list.Count));
+            double coef = newCoef * SpecialFunctions.Factorial(list.Count) * SpecialFunctions.Factorial(list.Count - 1) * Math.Sqrt(list.Count) * Math.Pow(4, list.Count) / ((double)SpecialFunctions.Factorial(2 * list.Count) * Math.Sqrt(Math.PI));
+            return coef;
         }
     }
 }

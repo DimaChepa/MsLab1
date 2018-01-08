@@ -35,6 +35,9 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -91,6 +94,8 @@
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtAnomalHigh = new System.Windows.Forms.TextBox();
             this.txtAnomalLow = new System.Windows.Forms.TextBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.netChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -105,6 +110,8 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.netChart)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -115,6 +122,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(2, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -619,6 +627,33 @@
             this.txtAnomalLow.Size = new System.Drawing.Size(100, 20);
             this.txtAnomalLow.TabIndex = 0;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.netChart);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(832, 596);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Вероятностная сетка";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // netChart
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.netChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.netChart.Legends.Add(legend4);
+            this.netChart.Location = new System.Drawing.Point(175, 111);
+            this.netChart.Name = "netChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.netChart.Series.Add(series2);
+            this.netChart.Size = new System.Drawing.Size(300, 300);
+            this.netChart.TabIndex = 0;
+            this.netChart.Text = "chart4";
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -648,6 +683,8 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.netChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -711,6 +748,8 @@
         private System.Windows.Forms.TextBox txtAnomalLow;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.DataVisualization.Charting.Chart netChart;
     }
 }
 
